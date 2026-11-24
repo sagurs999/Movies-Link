@@ -49,7 +49,7 @@ const downloadLinks = {
   "movie-003": {
     "480p": "",
     "720p": "",
-    "1080p": ""
+    "1080p": "https://playmogo.com/e/3d9olx7ca2f8"
   }
 };
 
