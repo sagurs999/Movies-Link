@@ -20,7 +20,7 @@ const movies = [
   },
   {
     id: "3d9olx7ca2f8",
-    url: "https://playmogo.com/e/3d9olx7ca2f8",
+    url: "<iframe width="600" height="480"src="https://playmogo.com/e/3d9olx7ca2f8" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>",
     title: "Beyond The Wild (2026)",
     category: "Adventure",
     thumbnail: "https://i.ibb.co/PzPhhMZf/80-Ift3zu-YFz3i-Dp-I2-Tqyt-WMPHJe.jpg"
