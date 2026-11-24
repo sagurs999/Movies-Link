@@ -1,0 +1,580 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  --bg: #080b12;
+  --panel: #111722;
+  --line: #293345;
+  --muted: #aeb7c4;
+  --red: #e50914;
+  --blue: #0879e8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: white;
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* HEADER */
+
+.header {
+  min-height: 72px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  background: rgba(8,11,18,.96);
+  border-bottom: 1px solid #202938;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font: 800 25px Manrope, sans-serif;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.logo span,
+footer span {
+  color: var(--red);
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  font-size: 14px;
+  color: #b7bdc9;
+}
+
+nav a:hover {
+  color: white;
+}
+
+#search {
+  width: 190px;
+  background: #171e2a;
+  border: 1px solid #303a4b;
+  padding: 11px 15px;
+  border-radius: 25px;
+  color: white;
+  outline: none;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 560px;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      #080b12 0%,
+      rgba(8,11,18,.83) 38%,
+      rgba(8,11,18,.12)
+    ),
+    linear-gradient(
+      0deg,
+      #080b12,
+      transparent 50%
+    ),
+    var(--hero);
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  padding: 7%;
+}
+
+.hero-content {
+  max-width: 550px;
+}
+
+.eyebrow {
+  display: block;
+  color: #ff3945;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font: 800 clamp(36px,5vw,58px)/1.08 Manrope,sans-serif;
+  margin: 12px 0 17px;
+}
+
+.hero p {
+  color: #c3c9d2;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-block;
+  padding: 13px 21px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 4px 6px 4px 0;
+}
+
+.primary {
+  background: var(--red);
+}
+
+.primary:hover {
+  background: #ff2631;
+}
+
+.secondary {
+  background: #333d4d;
+}
+
+/* MOVIE SECTION */
+
+.container {
+  max-width: 1350px;
+  margin: auto;
+  padding: 38px 5%;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+h2 {
+  font: 700 24px Manrope,sans-serif;
+}
+
+.count {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(6,minmax(0,1fr));
+  gap: 22px 16px;
+}
+
+.movie-card {
+  min-width: 0;
+}
+
+.poster {
+  position: relative;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #151c28;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .3s;
+}
+
+.movie-card:hover img {
+  transform: scale(1.06);
+  filter: brightness(.65);
+}
+
+.poster .category {
+  position: absolute;
+  bottom: 9px;
+  left: 9px;
+  background: #000b;
+  padding: 5px 9px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+.play-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background: var(--red);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: .2s;
+}
+
+.movie-card:hover .play-icon {
+  opacity: 1;
+}
+
+.movie-card h3 {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* MOVIE DETAILS */
+
+.details {
+  padding: 55px 7%;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  background: linear-gradient(90deg,#141d2b,#080b12);
+  min-height: 430px;
+}
+
+.details > img {
+  width: 220px;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+.details-info h1 {
+  font: 800 clamp(28px,4vw,45px) Manrope,sans-serif;
+  margin: 12px 0;
+}
+
+.details-info p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 16px 0;
+}
+
+.pill {
+  display: inline-block;
+  border: 1px solid #465164;
+  background: #202a39;
+  color: #dfe5ee;
+  border-radius: 20px;
+  padding: 7px 12px;
+  font-size: 11px;
+}
+
+/* VIDEO PLAYER */
+
+.player-page {
+  max-width: 1100px;
+}
+
+.back-link {
+  display: inline-block;
+  color: #b9c2cf;
+  margin-bottom: 22px;
+  font-size: 13px;
+}
+
+.player-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.player-heading h1 {
+  font: 700 clamp(25px,4vw,38px) Manrope,sans-serif;
+}
+
+.video-frame {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: black;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px #0008;
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.player-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: #c2cad5;
+}
+
+.big-play {
+  background: var(--red);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+}
+
+.player-placeholder h2 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.player-placeholder p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* DOWNLOAD SECTION */
+
+.download-section {
+  margin-top: 25px;
+  padding: 25px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 11px;
+}
+
+.download-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.download-heading h2 {
+  font-size: 23px;
+}
+
+.download-description,
+.download-help {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.quality-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.quality-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 16px;
+  background: #192333;
+  border: 1px solid #2b394d;
+  border-radius: 8px;
+}
+
+.quality-label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.quality-label strong {
+  font-size: 18px;
+}
+
+.quality-label span {
+  font-size: 11px;
+  color: #9eabba;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  padding: 12px 18px;
+  background: var(--blue);
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background: #0066c9;
+}
+
+.download-btn.disabled {
+  background: #3a4555;
+  color: #9ba6b5;
+  cursor: not-allowed;
+}
+
+.download-help {
+  font-size: 11px;
+  margin-top: 18px;
+  color: #8491a2;
+}
+
+/* EMPTY PAGE */
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--muted);
+}
+
+.empty h2 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 32px 20px;
+  border-top: 1px solid #252d3a;
+  color: #929cac;
+  line-height: 2;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px) {
+  .movie-grid {
+    grid-template-columns: repeat(4,minmax(0,1fr));
+  }
+}
+
+@media(max-width:650px) {
+
+  .header {
+    height: auto;
+    min-height: 65px;
+    flex-wrap: wrap;
+    padding: 13px 16px;
+    gap: 13px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    gap: 19px;
+    padding: 4px 0;
+  }
+
+  nav a {
+    white-space: nowrap;
+  }
+
+  #search {
+    width: 130px;
+  }
+
+  .hero {
+    min-height: 470px;
+    padding: 25px;
+    align-items: end;
+
+    background-image:
+      linear-gradient(
+        0deg,
+        #080b12 0%,
+        rgba(8,11,18,.75) 50%,
+        rgba(8,11,18,.1)
+      ),
+      var(--hero);
+  }
+
+  .container {
+    padding: 29px 16px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 20px 12px;
+  }
+
+  .movie-card h3 {
+    font-size: 12px;
+  }
+
+  .details {
+    padding: 35px 17px;
+    gap: 17px;
+    align-items: flex-start;
+  }
+
+  .details > img {
+    width: 110px;
+  }
+
+  .details-info h1 {
+    font-size: 24px;
+  }
+
+  .details-info p {
+    font-size: 12px;
+  }
+
+  .player-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .download-section {
+    padding: 17px;
+  }
+
+  .download-heading h2 {
+    font-size: 20px;
+  }
+
+  .quality-row {
+    padding: 12px;
+  }
+
+  .quality-label strong {
+    font-size: 16px;
+  }
+
+  .download-btn {
+    min-width: 112px;
+    padding: 11px 12px;
+    font-size: 12px;
+  }
+}
