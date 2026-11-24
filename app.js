@@ -19,11 +19,11 @@ const movies = [
     thumbnail: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85"
   },
   {
-    id: "movie-003",
-    url: "https://doodstream.com/e/YOUR_EMBED_ID",
+    id: "3d9olx7ca2f8",
+    url: "https://playmogo.com/e/3d9olx7ca2f8",
     title: "Beyond The Wild (2026)",
     category: "Adventure",
-    thumbnail: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
+    thumbnail: "https://i.ibb.co/PzPhhMZf/80-Ift3zu-YFz3i-Dp-I2-Tqyt-WMPHJe.jpg"
   }
 ];
 
